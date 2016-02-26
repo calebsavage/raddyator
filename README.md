@@ -2,7 +2,7 @@
 Internet-enabled thermostat project
 
 ## Problem
-My apartment, like many others, has one thermostat which barely works to control the radiators in multiple rooms with different heat sizes and heat retention characteristics. It measures the temperature in one location which may not be represenatative of the temp in each room. Some rooms get too cold, others get too hot.
+My apartment, like many others, has one thermostat which barely works to control the radiators in multiple rooms with different sizes and heat retention characteristics. It measures the temperature in one location which may not be represenatative of the temp in each room. Some rooms get too cold, others get too hot.
 
 
 
