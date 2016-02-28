@@ -1,10 +1,19 @@
-<div class="header tbg">
+
+<div class="header">
 	<h1>RaddyAtor<br>
-	Setpoint: <%= @setpoint.value %></h1>
+	Setpoint: <%= @setpoint %>°<br>
+	Range: ± <%= @range %> °<br>
+	Current Indoor Temp: <%= @current_inside %>°<br>
+	<% if @heating %>
+		Heating diff: <%= @diff %>
+	<% end %>
+	</h1>
+
+
 
 </div>
 
-<div class="cent col-md-3 col-sm-12">
+<div class="cent col-lg-3 col-md-12">
 <span>
 	<button type="button" class="btn btn-danger">Increase Temp</button>
 </span>
@@ -14,19 +23,19 @@
 </span>
 </div>
 
-<div class="thermostat col-md-6 col-sm-12">
-<img src="http://i.imgur.com/HEXaIZ8.png">
+<div class="thermostat col-lg-6 col-md-12">
+<img src="http://i.imgur.com/4bBeYmA.png" width="100%" class="uparrow">
 </div>
 
 <!-- <div class="uparrow">
-	<img src="http://i.imgur.com/4bBeYmA.png">
+	
 </div>
 
 <div class="downarrow">
 	<img src="http://i.imgur.com/HqIugfC.png">
 </div>
  -->
-<div class="col-md-3 col-sm-12 tbg big">
+<div class="col-lg-3 col-md-12 big">
 Currently:<br>
 
 <div class="current-temp">

@@ -1,5 +1,6 @@
 class DataController < ApplicationController
   before_action :set_datum, only: [:show, :edit, :update, :destroy]
+  protect_from_forgery :except => :api_create 
 
   # GET /data
   # GET /data.json
@@ -37,6 +38,17 @@ class DataController < ApplicationController
     end
   end
 
+  def api_create
+    @datum = Datum.new(api_params)
+    @datum.save
+    render :text => "success"
+  end
+
+  def api_get_setpoint
+    @setpoint = Config.find_by(:key => "setpoint").value
+    render :text => @setpoint
+  end
+
   # PATCH/PUT /data/1
   # PATCH/PUT /data/1.json
   def update
@@ -70,5 +82,9 @@ class DataController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def datum_params
       params.require(:datum).permit(:temp, :sensor_id)
+    end
+
+    def api_params
+      params.permit(:temp, :sensor_id)
     end
 end

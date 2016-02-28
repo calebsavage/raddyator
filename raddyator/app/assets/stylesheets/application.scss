@@ -19,6 +19,7 @@ body{
 	background-image: url('http://i.imgur.com/LLAzt0N.jpg');
 }
 
+
 .header{
 	
 	color: white;
@@ -32,7 +33,9 @@ body{
 }
 
 .thermostat{
-	
+	background-image: url(http://i.imgur.com/HEXaIZ8.png);
+	background-repeat:no-repeat;
+	background-position:center;
 	min-height: 600px;
 	z-index:-1;
 }
