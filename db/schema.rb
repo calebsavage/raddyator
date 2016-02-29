@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160227200032) do
+ActiveRecord::Schema.define(version: 20160229165549) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,6 +26,16 @@ ActiveRecord::Schema.define(version: 20160227200032) do
   create_table "data", force: :cascade do |t|
     t.float    "temp"
     t.integer  "sensor_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "programs", force: :cascade do |t|
+    t.string   "day"
+    t.string   "am_on"
+    t.string   "am_off"
+    t.string   "pm_on"
+    t.string   "pm_off"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

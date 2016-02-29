@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  day: MyString
+  am_on: MyString
+  am_off: MyString
+  pm_on: MyString
+  pm_off: MyString
+
+two:
+  day: MyString
+  am_on: MyString
+  am_off: MyString
+  pm_on: MyString
+  pm_off: MyString

@@ -7,6 +7,13 @@ class ConfigsController < ApplicationController
     @configs = Config.all
   end
 
+  def current_setpoint
+    sp = Config.find_by(:key => 'setpoint');
+    render :text => "#{sp.value}"
+  end
+
+  
+
   # GET /configs/1
   # GET /configs/1.json
   def show
@@ -19,6 +26,24 @@ class ConfigsController < ApplicationController
 
   # GET /configs/1/edit
   def edit
+  end
+
+  def setpoint_up
+    sp = Config.find_by(:key => 'setpoint');
+    spi = Integer(sp.value)
+    spi += 1
+    sp.value = String(spi)
+    sp.save!
+    render :text => "success"
+  end
+
+  def setpoint_down
+    sp = Config.find_by(:key => 'setpoint');
+    spi = Integer(sp.value)
+    spi -= 1
+    sp.value = String(spi)
+    sp.save!
+    render :text => "success"
   end
 
   # POST /configs

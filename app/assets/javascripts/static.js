@@ -1,5 +1,5 @@
-
-
+$(window).load(function(){
+	
 
 var weatherCall = function(){
 	$.ajax({
@@ -16,7 +16,76 @@ var weatherCall = function(){
 		});
 };
 
-var async = window.setTimeout(weatherCall(), 0);
 
 
+var updateSetPoint = function(){
+	$.ajax({
+		type: "GET",
+		url: "http://localhost:3000/csp",
+		success: function(data){
+			console.log("csp: " + data);
+			$(".csp").text(data + "°")
+		}	
+	});
+}
 
+
+var spu = function(){ //setpoint up
+	$.ajax({
+		type: "GET",
+		url: "http://localhost:3000/spu",
+		success: function(data){
+			console.log("spu " + data);
+			//do something
+		}
+	});
+}
+
+var spd = function(){ //setpoint down
+	$.ajax({
+		type: "GET",
+		url: "http://localhost:3000/spd",
+		success: function(data){
+			console.log("spd " + data);
+			//do something
+		}
+	});
+}
+
+var cit = function(){ //current indoor temp
+	$.ajax({
+		type:"GET",
+		url: "http://localhost:3000/cit",
+		success: function(data){
+			console.log("cit " + data);
+			$(".cit").text(data + "°");
+		}
+	})
+}
+
+var render = function(){
+	updateSetPoint();
+	cit();
+	window.setTimeout(weatherCall(), 0);
+
+}
+
+$(".up").on("click", function(){
+	spu();
+	render();
+
+});
+
+$(".down").on("click", function(){
+	spd();
+	render();
+
+});
+
+
+$(".test").click(function(){
+	console.log("test");
+})
+
+render();
+})

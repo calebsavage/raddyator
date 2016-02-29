@@ -8,6 +8,10 @@ class DataController < ApplicationController
     @data = Datum.all
   end
 
+  def current_indoor_temp
+    cit = Datum.last
+    render :text => "#{cit.temp}"
+  end
   # GET /data/1
   # GET /data/1.json
   def show

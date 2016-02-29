@@ -1,10 +1,15 @@
 Rails.application.routes.draw do
+  resources :programs
   resources :configs
   resources :data
 
   root 'static#index'
   post "/arduino" => 'data#api_create'
   get "/arduino" => 'data#api_get_setpoint'
+  get "/spu" => 'configs#setpoint_up'
+  get '/spd' => 'configs#setpoint_down'
+  get '/csp' => 'configs#current_setpoint'
+  get 'cit' => 'data#current_indoor_temp'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

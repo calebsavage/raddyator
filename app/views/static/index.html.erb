@@ -1,25 +1,31 @@
 
 <div class="header">
 	<h1>RaddyAtor<br>
-	Setpoint: <%= @setpoint %>°<br>
+
+	Setpoint: <div class="csp"><%= @setpoint %>°</div>
+
 	Range: ± <%= @range %> °<br>
-	Current Indoor Temp: <%= @current_inside %>°<br>
+	Current Indoor Temp: 
+	<div class="cit">
+		<%= @current_inside %>°
+	</div>
 	<% if @heating %>
-		Heating diff: <%= @diff %>
+		Heating 
 	<% end %>
+	diff: <%= @diff %>
 	</h1>
 
-
+<div class="test">TEST</div>
 
 </div>
 
 <div class="cent col-lg-3 col-md-12">
 <span>
-	<button type="button" class="btn btn-danger">Increase Temp</button>
+	<button type="button" class="up btn btn-danger">Increase Temp</button>
 </span>
 <br>
 <span>
-	<button type="button" class="btn btn-primary">Decrease Temp</button>
+	<button type="button" class="down btn btn-primary">Decrease Temp</button>
 </span>
 </div>
 
@@ -47,3 +53,7 @@ Currently:<br>
 </div>
 
 </div>
+
+<script>
+
+</script>

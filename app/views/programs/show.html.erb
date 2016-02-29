@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Day:</strong>
+  <%= @program.day %>
+</p>
+
+<p>
+  <strong>Am on:</strong>
+  <%= @program.am_on %>
+</p>
+
+<p>
+  <strong>Am off:</strong>
+  <%= @program.am_off %>
+</p>
+
+<p>
+  <strong>Pm on:</strong>
+  <%= @program.pm_on %>
+</p>
+
+<p>
+  <strong>Pm off:</strong>
+  <%= @program.pm_off %>
+</p>
+
+<%= link_to 'Edit', edit_program_path(@program) %> |
+<%= link_to 'Back', programs_path %>
