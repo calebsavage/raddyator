@@ -8,6 +8,8 @@ class StaticController < ApplicationController
 
 		@diff = (@setpoint - Integer(@current_inside.temp))
 
+		@chart_data = Datum.all
+
 		if @diff > @range
 			@heating = true
 			#turn on heater
