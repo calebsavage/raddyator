@@ -1,7 +1,10 @@
 source 'https://rubygems.org'
 
 gem 'bootstrap'
+#gem 'rails_bootstrap_navbar'
 gem 'rails-assets-tether'
+
+gem 'seed_dump'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5.1'

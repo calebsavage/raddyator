@@ -44,8 +44,11 @@ class DataController < ApplicationController
 
   def api_create
     @datum = Datum.new(api_params)
-    @datum.save
-    render :text => "success"
+    if @datum.save
+      render :text => "success"
+    else
+      render :text => 'failure'
+    end
   end
 
   def api_get_setpoint
@@ -89,6 +92,6 @@ class DataController < ApplicationController
     end
 
     def api_params
-      params.permit(:temp, :sensor_id)
+      params.permit(:temp, :sensor_id, :humidity)
     end
 end

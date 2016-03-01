@@ -1,0 +1,49 @@
+
+<div class="header">
+	<h1>RaddyAtor<br>
+
+</div>
+
+<div class="row-eq-height">
+
+	<div class="cent tbg col-lg-3 col-md-12">
+		Location: 
+		<%= form_for (@location), :remote => true do |f| %>
+			<%= f.text_field :value %>
+			<%= f.submit %>
+		<% end %>
+	</div>
+
+	<div class="cent tbg col-lg-3 col-md-12">
+		Units: 
+		<%= form_for (@units), :remote => true  do |f| %>
+			<%= f.text_field :value %>
+			<%= f.submit %>
+		<% end %>
+
+	</div>
+
+	<div class="cent tbg col-lg-3 col-md-12">
+		Range (hysteresis): 
+		<%= form_for (@range), :remote => true  do |f| %>
+			<%= f.text_field :value %>
+			<%= f.submit %>
+		<% end %>
+
+	</div>
+
+	<div class="cent tbg col-lg-3 col-md-12">
+		Mode: 
+		<%= form_for (@mode), :remote => true  do |f| %>
+			<%= f.text_field :value %>
+			<%= f.submit %>
+		<% end %>
+
+	</div>
+
+
+</div> <!-- end row -->
+
+	
+	
+

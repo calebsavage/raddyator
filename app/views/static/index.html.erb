@@ -2,58 +2,62 @@
 <div class="header">
 	<h1>RaddyAtor<br>
 
-	Setpoint: <div class="csp"><%= @setpoint %>°</div>
+</div>
 
-	Range: ± <%= @range %> °<br>
-	Current Indoor Temp: 
-	<div class="cit">
-		<%= @current_inside %>°
+<div class="row-eq-height">
+
+	<div class="cent tbg col-lg-3 col-md-12">
+		
+				<span>
+					<button type="button" class="up btn btn-danger">Increase Temp</button>
+				</span>
+				<br>
+				<span>
+					<button type="button" class="down btn btn-primary">Decrease Temp</button>
+				</span>
+
 	</div>
-	<% if @heating %>
-		Heating 
-	<% end %>
-	diff: <%= @diff %>
-	</h1>
 
-<div class="test">TEST</div>
+	<div class="cent tbg col-lg-3 col-md-12">
+			Setpoint: 
+			
+			<h1 class="csp">
+				<%= @setpoint %>°
+			</h1>
+			
+			Range: ± <%= @range %> °
 
-</div>
+			<% if @heating %>
+				Heating 
+			<% end %>
+			diff: <%= @diff %>
+	</div>
 
-<div class="cent col-lg-3 col-md-12">
-<span>
-	<button type="button" class="up btn btn-danger">Increase Temp</button>
-</span>
-<br>
-<span>
-	<button type="button" class="down btn btn-primary">Decrease Temp</button>
-</span>
-</div>
+	<div class="cent tbg col-lg-3 col-md-12">
 
-<div class="thermostat col-lg-6 col-md-12">
-<img src="http://i.imgur.com/4bBeYmA.png" width="100%" class="uparrow">
-</div>
+			Current Indoor Temp: 
+			<h1 class="cit">
+				<%= @current_inside %>°
+			</h1>
 
-<!-- <div class="uparrow">
+	</div>
+
+	<div class="cent tbg col-lg-3 col-md-12">
+
+			Outside:<br>
+
+
+			<h1 class="current-temp">--</h1>
+
+
+
+			<h2 class="current-weather">--</h2>
+
+	</div>
+
+
+</div> <!-- end row -->
+
 	
-</div>
+	
 
-<div class="downarrow">
-	<img src="http://i.imgur.com/HqIugfC.png">
-</div>
- -->
-<div class="col-lg-3 col-md-12 big">
-Currently:<br>
-
-<div class="current-temp">
---
-</div>
-
-<div class="current-weather">
---
-</div>
-
-</div>
-
-<script>
-
-</script>

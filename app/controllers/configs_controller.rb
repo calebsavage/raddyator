@@ -8,10 +8,17 @@ class ConfigsController < ApplicationController
   end
 
   def current_setpoint
-    sp = Config.find_by(:key => 'setpoint');
+    sp = Config.find_by(:key => 'setpoint')
     render :text => "#{sp.value}"
   end
 
+  def settings
+    @location = Config.find_by(:key => 'location')
+    @units = Config.find_by(:key => 'units')
+    @range = Config.find_by(:key => 'range')
+    @mode = Config.find_by(:key => 'mode')
+    render "configs/settings"
+  end
   
 
   # GET /configs/1
@@ -67,7 +74,7 @@ class ConfigsController < ApplicationController
   def update
     respond_to do |format|
       if @config.update(config_params)
-        format.html { redirect_to @config, notice: 'Config was successfully updated.' }
+        format.html { redirect_to action: "settings", notice: 'Config was successfully updated.' }
         format.json { render :show, status: :ok, location: @config }
       else
         format.html { render :edit }

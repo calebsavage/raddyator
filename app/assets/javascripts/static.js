@@ -1,5 +1,5 @@
 $(window).load(function(){
-	
+
 
 var weatherCall = function(){
 	$.ajax({
@@ -8,7 +8,7 @@ var weatherCall = function(){
 			success: function(data){
 				console.log(data);
 				console.log(data.main.temp);
-				$(".current-temp").text(data.main.temp);
+				$(".current-temp").text(data.main.temp + "°");
 				$(".current-weather").text(data.weather[0].main);
 
 
