@@ -8,11 +8,14 @@ var weatherCall = function(){
 			type: "GET",
 			url: "http://api.openweathermap.org/data/2.5/weather?q=Brooklyn&units=imperial&appid=44db6a862fba0b067b1930da0d769e98",
 			success: function(data){
-				console.log(data);
-				console.log(data.main.temp);
-				$(".current-temp").text(data.main.temp + "°");
-				$(".current-weather").text(data.weather[0].main);
-
+				if (data.main.temp){
+					console.log(data);
+					console.log(data.main.temp);
+					$(".current-temp").text(data.main.temp + "°");
+					$(".current-weather").text(data.weather[0].main);
+				} else{
+					console.log("Weather API call failed");
+				}
 
 			}
 		});
@@ -90,11 +93,12 @@ $(".test").click(function(){
 	console.log("test");
 })
 
-render();
-var interval = window.setInterval(mycallback(), 5000);
 
-var mycallback = function(){
-	render();
-	console.log("render")
-}
+var interval = window.setInterval(function(){
+console.log("int test");
+render();
+}, 60000);
+
+
+
 })
