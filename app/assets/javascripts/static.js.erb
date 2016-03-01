@@ -93,7 +93,7 @@ $(".test").click(function(){
 	console.log("test");
 })
 
-
+render(); //render once on page load, then again every minute
 var interval = window.setInterval(function(){
 console.log("int test");
 render();
