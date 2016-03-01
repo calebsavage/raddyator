@@ -1,6 +1,6 @@
 
 <div class="header">
-	<h1>RaddyAtor<br>
+	<h1>RaddyAtor</h1>
 
 </div>
 
@@ -41,8 +41,10 @@
 
 			Current Indoor Temp: 
 			<h1 class="cit">
-				<%= @current_inside %>°
-			</h1>
+				<%= @current_inside.temp %>°
+			</h1><br>
+			Humidity: <%= @current_inside.humidity %><br>
+			Updated at <%= @current_inside.created_at %>
 
 	</div>
 
@@ -62,6 +64,6 @@
 
 </div> <!-- end row -->
 
-	
+
 	
 

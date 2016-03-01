@@ -66,9 +66,10 @@ var cit = function(){ //current indoor temp
 }
 
 var render = function(){
-	updateSetPoint();
+	
 	cit();
-	window.setTimeout(weatherCall(), 0);
+	var async_csp = window.setTimeout(updateSetPoint(), 20);
+	var async_weather = window.setTimeout(weatherCall(), 0);
 
 }
 
