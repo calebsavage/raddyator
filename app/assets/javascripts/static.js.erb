@@ -91,5 +91,10 @@ $(".test").click(function(){
 })
 
 render();
-var interval = window.setInterval(render(), 2000);
+var interval = window.setInterval(mycallback(), 5000);
+
+var mycallback = function(){
+	render();
+	console.log("render")
+}
 })
