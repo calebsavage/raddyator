@@ -1,5 +1,7 @@
 $(window).load(function(){
 
+var path = $(".path").val();
+
 
 var weatherCall = function(){
 	$.ajax({
@@ -21,7 +23,7 @@ var weatherCall = function(){
 var updateSetPoint = function(){
 	$.ajax({
 		type: "GET",
-		url: "http://localhost:3000/csp",
+		url: path + "csp",
 		success: function(data){
 			console.log("csp: " + data);
 			$(".csp").text(data + "°")
@@ -33,7 +35,7 @@ var updateSetPoint = function(){
 var spu = function(){ //setpoint up
 	$.ajax({
 		type: "GET",
-		url: "http://localhost:3000/spu",
+		url: path + "spu",
 		success: function(data){
 			console.log("spu " + data);
 			//do something
@@ -44,7 +46,7 @@ var spu = function(){ //setpoint up
 var spd = function(){ //setpoint down
 	$.ajax({
 		type: "GET",
-		url: "http://localhost:3000/spd",
+		url: path + "spd",
 		success: function(data){
 			console.log("spd " + data);
 			//do something
@@ -55,7 +57,7 @@ var spd = function(){ //setpoint down
 var cit = function(){ //current indoor temp
 	$.ajax({
 		type:"GET",
-		url: "http://localhost:3000/cit",
+		url: path + "cit",
 		success: function(data){
 			console.log("cit " + data);
 			$(".cit").text(data + "°");
