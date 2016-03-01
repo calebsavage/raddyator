@@ -92,7 +92,7 @@ var data = {
             pointHighlightFill: "#fff",
             pointHighlightStroke: "rgba(220,220,220,1)",
             data: [<% @chart_data.each do |d| %>
-    				<%= d.temp %>,<% end %> 0]
+    				<%= d.temp || 0%>,<% end %> 0]
         },
         {
             label: "My Second dataset",
@@ -103,7 +103,7 @@ var data = {
             pointHighlightFill: "#fff",
             pointHighlightStroke: "rgba(151,187,205,1)",
             data: [
-            	<% @chart_data.each do |d| %><%= d.humidity %>,<% end %> 0]
+            	<% @chart_data.each do |d| %><%= d.humidity || 0 %>,<% end %> 0]
         }
     ]
 };
