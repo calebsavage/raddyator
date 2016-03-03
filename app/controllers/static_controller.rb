@@ -8,7 +8,7 @@ class StaticController < ApplicationController
 
 		@diff = (@setpoint - Integer(@current_inside.temp))
 
-		@chart_data = Datum.limit(20)
+		@chart_data = Datum.where("created_at >= ?", Time.zone.now.beginning_of_day)
 
 		if @diff > @range
 			@heating = true
