@@ -10,7 +10,8 @@ class StaticController < ApplicationController
 
 		if @units == "c"
 			@current_inside = (Integer(@current_inside)-32) * (5.0/9.0)
-
+		end
+		
 		@diff = (@setpoint - Integer(@current_inside.temp))
 
 		@chart_data = Datum.limit(40)
