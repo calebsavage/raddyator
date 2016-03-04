@@ -8,13 +8,10 @@ class StaticController < ApplicationController
 
 		@units = Config.find_by(:key => "units").value
 
-		if @units == "c"
-			@current_inside = (Integer(@current_inside)-32) * (5.0/9.0)
-		end
-		
+
 		@diff = (@setpoint - Integer(@current_inside.temp))
 
-		@chart_data = Datum.limit(40)
+		@chart_data = Datum.limit(40).order(created_at: :desc)
 		#Datum.where("created_at >= ?", Time.zone.now.beginning_of_day)
 
 		if @diff > @range
